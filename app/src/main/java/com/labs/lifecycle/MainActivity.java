@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import static android.view.View.OnClickListener;
 
@@ -28,6 +29,16 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        Button btn_text2log = (Button) findViewById(R.id.btn_text2log);
+        btn_text2log.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText intText = (EditText) findViewById(R.id.editText);
+                String contents = intText.getText().toString();
+                Log.i(LOG_TAG + ".OnClickListener", "Text: "+contents);
             }
         });
     }
