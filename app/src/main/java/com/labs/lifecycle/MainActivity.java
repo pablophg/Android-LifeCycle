@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import static android.view.View.OnClickListener;
@@ -32,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        Button btn_text2log = (Button) findViewById(R.id.btn_text2log);
+        final Button btn_text2log = (Button) findViewById(R.id.btn_text2log);
         btn_text2log.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,24 @@ public class MainActivity extends ActionBarActivity {
                 Log.i(LOG_TAG + ".OnClickListener", "Text: "+contents);
             }
         });
+
+        CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
+        cb.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckBox cb = (CheckBox) v;
+                if(cb.isChecked()){
+                    Log.i(LOG_TAG + ".OnClickListener", "Checkbox: checked");
+                    btn_text2log.setEnabled(true);
+                }else{
+                    Log.i(LOG_TAG + ".OnClickListener", "Checkbox: NOT checked");
+                    btn_text2log.setEnabled(false);
+                }
+            }
+        });
+
+        //WebView webView = (WebView)findViewById(R.id.webView);
+        //webView.loadUrl("http://developer.android.com/");
     }
 
     @Override
