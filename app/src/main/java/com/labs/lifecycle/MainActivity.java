@@ -122,6 +122,9 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_change_text:
                 tv.setText("Changed text!");
                 return true;
+            case R.id.action_share:
+                tv.setText(R.string.action_share);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
