@@ -111,7 +111,6 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         TextView tv = (TextView) findViewById(R.id.textView4);
-        //tv.setText('Changed text');
         switch (id)
         {
             case R.id.action_settings:
