@@ -10,6 +10,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import static android.view.View.OnClickListener;
 
@@ -109,11 +110,21 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        TextView tv = (TextView) findViewById(R.id.textView4);
+        //tv.setText('Changed text');
+        switch (id)
+        {
+            case R.id.action_settings:
+                tv.setText(R.string.action_settings);
+                return true;
+            case R.id.action_about:
+                tv.setText(R.string.action_about);
+                return true;
+            case R.id.action_change_text:
+                tv.setText("Changed text!");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
